@@ -1,4 +1,9 @@
- SubsamplingScaleImageView fullscreenImage = findViewById(R.id.fullscreen_image);
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fullimageninternet);
+
+SubsamplingScaleImageView fullscreenImage = findViewById(R.id.fullscreen_image);
  
  String imageUrl = getIntent().getStringExtra("image_url");
         Picasso.get().load(imageUrl).into(new Target() {
@@ -27,3 +32,27 @@
                             Toast.makeText(getApplicationContext(), "Cargando", Toast.LENGTH_LONG).show();
                         }
                     });
+      }
+}
+
+
+XML !!!!!!!!!!!!!!!!!!!!!!!!
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        android:id="@+id/fullscreen_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+   </LinearLayout>
+
+
+
+
